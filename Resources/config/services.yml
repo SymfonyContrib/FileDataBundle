@@ -1,0 +1,12 @@
+parameters:
+    file_data.form.type.class: SymfonyContrib\Bundle\FileDataBundle\Form\Type\FileDataBaseType
+
+services:
+    file_data.form.type:
+        class: %file_data.form.type.class%
+        arguments:
+            - %file_data.model_class%
+            - @filefield.upload_helper
+        tags:
+            - name: form.type
+              alias: file_data_base

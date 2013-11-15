@@ -1,0 +1,37 @@
+SymfonyContrib\Bundle\FileDataBundle\Entity\FileDataBase:
+    type: mappedSuperclass
+    fields:
+        name:
+            type: string
+            length: 255
+        desc:
+            column: description
+            type: string
+            length: 255
+        size:
+            column: filesize
+            type: bigint
+            nullable: true
+        mimeType:
+            column: mimetype
+            type: string
+            length: 255
+            nullable: true
+        metaData:
+            column: meta_data
+            type: json_array
+            nullable: true
+        local:
+            column: is_local
+            type: boolean
+        created:
+            type: datetime
+        updated:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks:
+        prePersist:
+            - prePersist
+        preUpdate:
+            - preUpdate
+

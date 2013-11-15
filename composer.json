@@ -1,0 +1,25 @@
+{
+    "name": "symfonycontrib/filedata-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 File Data Management Bundle",
+    "keywords": ["Symfony", "bundle", "form", "file", "metadata", "content management"],
+    "homepage": "http://symfonycontrib.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alan Doucette",
+            "email": "dragonwize@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "symfony/symfony": "~2.3.6"
+    },
+    "autoload": {
+        "psr-0": {
+            "SymfonyContrib\\Bundle\\FileDataBundle\\": ""
+        }
+    },
+    "target-dir": "SymfonyContrib/Bundle/FileDataBundle"
+}
