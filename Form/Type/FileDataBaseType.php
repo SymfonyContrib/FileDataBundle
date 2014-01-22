@@ -54,12 +54,8 @@ class FileDataBaseType extends AbstractType
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        //$data = $view->vars['form']->parent->vars['data'];
         $data = $view->vars['value'];
 
-        if (!$data instanceof $this->class) {
-            //return;
-        }
         $filefield = $options['filefield_options'];
 
         $file = [];
@@ -72,7 +68,7 @@ class FileDataBaseType extends AbstractType
                 'name' => $name,
                 'iconUri' => $this->helper->getIconUri() . $icon,
                 'size' => $this->helper->formatSize($size),
-                'url' => $filefield['uri'] . $name,
+                'uri' => $filefield['uri'] . $name,
             ];
         }
 
@@ -80,6 +76,7 @@ class FileDataBaseType extends AbstractType
             'multiple' => $filefield['multiple'],
             'preview_type' => $filefield['preview_type'],
             'file' => $file,
+            'is_prototype' => ($view->vars['name'] === $filefield['prototype_name']),
         ];
 
         $view->vars = array_replace($view->vars, $vars);

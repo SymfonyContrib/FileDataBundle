@@ -4,31 +4,47 @@ SymfonyContrib\Bundle\FileDataBundle\Entity\FileDataBase:
         name:
             type: string
             length: 255
+            options:
+                comment: Usually filename but can be anything representing file.
         desc:
             column: description
             type: string
             length: 255
+            options:
+                comment: Description of file.
         size:
             column: filesize
             type: bigint
             nullable: true
+            options:
+                comment: Size of file in bytes.
         mimeType:
             column: mimetype
             type: string
             length: 255
             nullable: true
+            options:
+                comment: Mime/Media type of file.
         metaData:
             column: meta_data
             type: json_array
             nullable: true
+            options:
+                comment: JSON array of arbitrary file data.
         local:
             column: is_local
             type: boolean
+            options:
+                comment: Whether this file is on a drive locally accessible to the application.
         created:
             type: datetime
+            options:
+                comment: Date and time this entry was created.
         updated:
             type: datetime
             nullable: true
+            options:
+                comment: Date and time this row was updated.
     lifecycleCallbacks:
         prePersist:
             - prePersist

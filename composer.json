@@ -1,5 +1,5 @@
 {
-    "name": "symfonycontrib/filedata-bundle",
+    "name": "symfonycontrib/file-data-bundle",
     "type": "symfony-bundle",
     "description": "Symfony2 File Data Management Bundle",
     "keywords": ["Symfony", "bundle", "form", "file", "metadata", "content management"],
