@@ -1,3 +1,0 @@
-file_data_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: FileDataBundle:Default:index }
